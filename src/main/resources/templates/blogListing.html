@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Codes N Talks</title>
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<h2>
+			<span th:text="${title}"></span>
+		</h2>
+		<div class="blogItem" th:each="blog : ${blogList}">
+			<h3>
+				<span th:text="${blog.headLine}"></span>
+			</h3>
+			<div>
+				<ul>
+					<li>
+						Published: <span th:text="${blog.publishedOn}"></span>
+					</li>
+					<li>
+						Author: <span th:text="${blog.author}"></span>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<span th:text="${blog.content}"></span>
+			</div>
+		</div>
+	</body>
+</html>

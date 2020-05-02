@@ -1,0 +1,31 @@
+spring:
+   thymeleaf:
+      cache: true
+   
+   jpa:
+      show-sql: false
+
+      hibernate:
+         naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.MySQL5Dialect
+   
+   datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/news
+      username: root
+      password: Password@123
+
+server:
+   port: 80
+   
+logging:
+   pattern:
+      console: "%-5level %logger{36} - %msg%n"
+   level:
+      org.springframework: ERROR
+      org.springframework.jdbc: ERROR
+      com.heytusar: ERROR
+      root: ERROR
