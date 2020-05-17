@@ -7,8 +7,11 @@
 	</head>
 	<body>
 		<h2>
-			<span th:text="${title}"></span>
+			<span th:text="${title}" th:remove="tag"></span>
 		</h2>
+		<h4 th:if="${successMsg}" th:text="${successMsg}">
+				
+		</h4>
 		<div class="blogItem" th:each="blog : ${blogList}">
 			<h3>
 				<span th:text="${blog.headLine}"></span>
@@ -26,6 +29,15 @@
 			<div>
 				<span th:text="${blog.content}"></span>
 			</div>
+			<div>
+				<a th:href="@{blog/{id}(id=${blog.id})}"
+				>Edit Blog</a>
+			</div>
+		</div>
+		<div>
+			<a href="newBlog">
+				Write new blog
+			</a>
 		</div>
 	</body>
 </html>

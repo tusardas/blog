@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Codes N Talks</title>
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<h2>
+			<span th:text="${title}"></span>
+		</h2>
+		<div>
+			<form id="blogForm" th:action="${result == null} ? 'blog' : '/updateBlog/' + ${result?.blog?.id}" method="POST">
+				<input type="hidden" th:value="${result?.blog?.id}" />
+				<div>
+					Headline: 
+					<input type="text" name="headLine" th:value="${result?.blog?.headLine}"/>
+				</div>
+				<div>
+					Content: 
+					<textarea name="content">
+						<text th:utext="${result?.blog?.content}" th:remove="tag"></text>
+					</textarea>
+				</div>
+				<div>
+					Category: 
+					<input type="text" name="blogCategory" th:value="${result?.blog?.blogCategory}"/>
+				</div>
+				<div>
+					Author: 
+					<input type="text" name="author" th:value="${result?.blog?.author}"/>
+				</div>
+				<div>
+					<input type="submit" th:value="${title}" />
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

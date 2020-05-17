@@ -50,7 +50,7 @@ public class Blog {
 	public String getBlogCategory() {
 		return blogCategory;
 	}
-	public void setBlogsCategory(String blogCategory) {
+	public void setBlogCategory(String blogCategory) {
 		this.blogCategory = blogCategory;
 	}
 	public String getHeadLine() {
